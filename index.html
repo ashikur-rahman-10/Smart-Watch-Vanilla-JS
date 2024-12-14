@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart Watch</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- import font awesome -->
+    <script
+      src="https://kit.fontawesome.com/9a1677510c.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -57,20 +63,28 @@
         <h1 class="text-[#364A63] text-[44px] font-bold">
           Classy Modern Smart Watch
         </h1>
-        <div class="rating text-yellow-500 mb-2">
-          ⭐⭐⭐⭐☆ <span class="text-[#8091A7]"> (2 Reviews)</span>
+        <div class="rating text-[#FFD200] mb-2 text-lg">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fa-regular fa-star-half-stroke"></i>
+          <i class="far fa-star"></i>
+          <span class="text-[#8091A7] text-sm"> (2 Reviews)</span>
         </div>
-        <div class="price text-xl text-orange-600 mb-4">
-          <del class="text-[#8091A7] mr-2">$99.00</del> $79.00
+        <div class="price text-[#6576FF] text-2xl font-bold mb-4">
+          <del class="text-[#8091A7] text-xl mr-1 font-normal">$99.00</del>
+          $79.00
         </div>
-        <p class="text-sm text-[#8091A7] mb-4">
+        <p class="text-lg text-[#8091A7] mb-4">
           I must explain to you how all this mistaken idea of denouncing
           pleasure and praising pain was born.
         </p>
 
         <!-- Band Color -->
         <div class="options mb-4">
-          <label class="block font-medium mb-2">Band Color</label>
+          <label class="block font-medium mb-2 text-[#364A63] text-lg"
+            >Band Color</label
+          >
           <div id="band-color" class="flex gap-3">
             <div
               class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center selected"
@@ -112,56 +126,72 @@
 
         <!-- Wrist Size -->
         <div class="options mb-4">
-          <label class="block font-medium mb-2">Wrist Size</label>
+          <label class="block font-medium mb-2 text-[#364A63] text-lg"
+            >Wrist Size</label
+          >
           <div id="wrist-size" class="flex gap-3">
             <button
               data-size="S"
               data-price="69"
-              class="py-1 px-3 border border-[#8091A7] text-[#8091A7] rounded-sm text-sm"
+              class="w-[73px] h-[36px] border border-[#8091A7] text-[#8091A7] rounded-[3px] text-[13px]"
             >
-              <span class="pr-1">S</span> $69
+              <span class="pr-1 text-[#6576FF] font-bold text-[14px]">S</span>
+              $69
             </button>
             <button
               data-size="M"
               data-price="79"
-              class="py-1 px-3 border rounded-lg text-sm"
+              class="w-[73px] h-[36px] border border-[#8091A7] text-[#8091A7] rounded-[3px] text-[13px]"
             >
-              M $79
+              <span class="pr-1 text-[#364A63] font-bold text-[14px]">M</span>
+              $79
             </button>
             <button
               data-size="L"
               data-price="89"
-              class="py-1 px-3 border rounded-lg text-sm"
+              class="w-[73px] h-[36px] border border-[#8091A7] text-[#8091A7] rounded-[3px] text-[13px]"
             >
-              L $89
+              <span class="pr-1 text-[#364A63] font-bold text-[14px]">L</span>
+              $89
             </button>
             <button
               data-size="XL"
               data-price="99"
-              class="py-1 px-3 border rounded-lg text-sm"
+              class="w-[73px] h-[36px] border border-[#8091A7] text-[#8091A7] rounded-[3px] text-[13px]"
             >
-              XL $99
+              <span class="pr-1 text-[#364A63] font-bold text-[14px]">XL</span>
+              $99
             </button>
           </div>
         </div>
 
         <!-- Quantity & Add to Cart -->
-        <div class="cart-actions flex items-center gap-4">
-          <button id="decrement" class="py-1 px-3 bg-gray-200 rounded">
-            -
-          </button>
-          <input
-            id="quantity"
-            type="text"
-            value="1"
-            class="w-12 text-center border rounded-lg"
-          />
-          <button id="increment" class="py-1 px-3 bg-gray-200 rounded">
-            +
-          </button>
+        <div class="cart-actions flex items-center gap-3">
+          <div
+            class="border border-[#DBDFEA] rounded-[4px] w-fit h-[36px] p-0 m-0"
+          >
+            <button
+              id="decrement"
+              class="h-[36px] w-[36px] text-[19px] text-[#8091A7] hover:text-gray-700"
+            >
+              -
+            </button>
+            <input
+              id="quantity"
+              type="text"
+              value="1"
+              class="w-[60px] h-[36x] bg-tranparent text-center border-x border-[#DBDFEA] text-[#8091A7] text-[19px]"
+            />
+            <button
+              id="increment"
+              class="h-[36px] w-[36px] text-[19px] text-[#8091A7] hover:text-gray-700"
+            >
+              +
+            </button>
+          </div>
           <button
             id="add-to-cart"
-            class="py-2 px-4 bg-orange-500 text-white rounded-lg hover:bg-orange-600"
+            class="py-2 h-[37px] px-[18px] font-bold bg-[#6576FF] text-white rounded-[3px] hover:bg-blue-400"
           >
             Add to Cart
           </button>
