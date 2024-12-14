@@ -4,6 +4,173 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart Watch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+
+      .custom-alert {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .custom-alert.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    </style>
   </head>
-  <body></body>
+  <body class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div
+      class="container flex flex-col lg:flex-row bg-white shadow-lg rounded-lg overflow-hidden w-11/12 max-w-5xl"
+    >
+      <!-- Image Section -->
+      <div
+        class="image-section flex-1 bg-purple-200 flex justify-center items-center"
+      >
+        <img
+          id="main-image"
+          src=""
+          alt="Smart Watch"
+          class="max-w-full h-auto"
+        />
+      </div>
+
+      <!-- Details Section -->
+      <div class="details-section flex-1 p-6 flex flex-col">
+        <h1 class="text-2xl font-bold mb-2">Classy Modern Smart Watch</h1>
+        <div class="rating text-yellow-500 mb-2">⭐⭐⭐⭐☆ (2 Reviews)</div>
+        <div class="price text-xl text-orange-600 mb-4">
+          <del class="text-gray-500 mr-2">$99.00</del> $79.00
+        </div>
+        <p class="text-sm text-gray-600 mb-4">
+          I must explain to you how all this mistaken idea of denouncing
+          pleasure and praising pain was born.
+        </p>
+
+        <!-- Band Color -->
+        <div class="options mb-4">
+          <label class="block font-medium mb-2">Band Color</label>
+          <div id="band-color" class="flex gap-3">
+            <div
+              class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center selected"
+              data-image="/assets/purple.png"
+              data-band-color="#6b46c1"
+            >
+              <div
+                class="w-4 h-4 rounded-full bg-purple-500 cursor-pointer"
+              ></div>
+            </div>
+
+            <div
+              class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center"
+              data-image="/assets/cyan.png"
+              data-band-color="#4fd1c5"
+            >
+              <div
+                class="w-4 h-4 rounded-full bg-cyan-400 cursor-pointer"
+              ></div>
+            </div>
+            <div
+              class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center"
+              data-image="/assets/blue.png"
+              data-band-color="#3142ce"
+            >
+              <div
+                class="w-4 h-4 rounded-full bg-blue-500 cursor-pointer"
+              ></div>
+            </div>
+            <div
+              class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center"
+              data-image="/assets/black.png"
+              data-band-color="#000000"
+            >
+              <div class="w-4 h-4 rounded-full bg-black cursor-pointer"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wrist Size -->
+        <div class="options mb-4">
+          <label class="block font-medium mb-2">Wrist Size</label>
+          <div id="wrist-size" class="flex gap-3">
+            <button
+              data-size="S"
+              data-price="69"
+              class="py-1 px-3 border rounded-lg text-sm"
+            >
+              S $69
+            </button>
+            <button
+              data-size="M"
+              data-price="79"
+              class="py-1 px-3 border rounded-lg text-sm"
+            >
+              M $79
+            </button>
+            <button
+              data-size="L"
+              data-price="89"
+              class="py-1 px-3 border rounded-lg text-sm"
+            >
+              L $89
+            </button>
+            <button
+              data-size="XL"
+              data-price="99"
+              class="py-1 px-3 border rounded-lg text-sm"
+            >
+              XL $99
+            </button>
+          </div>
+        </div>
+
+        <!-- Quantity & Add to Cart -->
+        <div class="cart-actions flex items-center gap-4">
+          <button id="decrement" class="py-1 px-3 bg-gray-200 rounded">
+            -
+          </button>
+          <input
+            id="quantity"
+            type="text"
+            value="1"
+            class="w-12 text-center border rounded-lg"
+          />
+          <button id="increment" class="py-1 px-3 bg-gray-200 rounded">
+            +
+          </button>
+          <button
+            id="add-to-cart"
+            class="py-2 px-4 bg-orange-500 text-white rounded-lg hover:bg-orange-600"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Cart Button -->
+    <button
+      id="checkout-btn"
+      class="fixed bottom-4 right-4 bg-orange-500 text-white rounded-full py-3 px-6 shadow-lg hidden"
+    >
+      Checkout (<span id="cart-count">0</span>)
+    </button>
+  </body>
 </html>
