@@ -15,6 +15,7 @@ const cartTotal = document.getElementById("cart-total");
 const cartQuantity = document.getElementById("cart-quantity");
 const continueShoppingBtn = document.getElementById("continue-shopping");
 const customAlert = document.getElementById("custom-alert");
+const favoriteBtn = document.getElementById("favorite-btn");
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let selectedColor = null;
@@ -22,13 +23,25 @@ let selectedColorImage = null; // Separate variable for the image
 let selectedSize = null;
 
 // Show Custom Alert
-function showCustomAlert(message) {
+function showCustomAlert(message, type = "success") {
   customAlert.textContent = message;
+
+  // Set the background color based on the type
+  if (type === "success") {
+    customAlert.style.background = "#4caf50"; // Green for success
+  } else if (type === "warning") {
+    customAlert.style.background = "#ff9800"; // Yellow for warning
+  } else if (type === "error") {
+    customAlert.style.background = "#f44336"; // Red for error
+  }
+
+  // Show the alert
   customAlert.classList.add("show");
   setTimeout(() => {
     customAlert.classList.remove("show");
   }, 2000);
 }
+
 
 // Change Thumbnail Image Based on Band Color
 colors.forEach((color, index) => {
@@ -89,7 +102,7 @@ decrementBtn.addEventListener("click", () => {
 // Add to Cart
 addToCartBtn.addEventListener("click", () => {
   if (!selectedColor || !selectedSize) {
-    showCustomAlert("Please select color and size!");
+    showCustomAlert("Please select a size!", "warning");
     return;
   }
 
@@ -111,7 +124,7 @@ addToCartBtn.addEventListener("click", () => {
 
   // Update cart UI and show alert
   updateCartUI();
-  showCustomAlert("Item added to cart!");
+  showCustomAlert("Item added to cart!", "success");
 });
 
 // Update Floating Checkout Button
@@ -177,6 +190,39 @@ function removeItemFromCart(index) {
 continueShoppingBtn.addEventListener("click", () => {
   cartModal.classList.add("hidden");
 });
+
+// Function to update the UI based on the favorite status
+function updateFavoriteUI() {
+  const favoriteStatus = JSON.parse(localStorage.getItem("favorite"));
+
+  if (favoriteStatus === true) {
+    favoriteBtn.innerHTML = `<i class="fa-solid fa-heart text-xl text-red-500"></i>`;
+  } else {
+    favoriteBtn.innerHTML = `<i class="fa-regular fa-heart text-xl text-[#6576FF]"></i>`;
+  }
+}
+
+// Manage favorite button click
+favoriteBtn.addEventListener("click", () => {
+  // Toggle favorite status in localStorage
+  const favoriteStatus = JSON.parse(localStorage.getItem("favorite"));
+
+  if (favoriteStatus === true) {
+    localStorage.setItem("favorite", JSON.stringify(false));
+    showCustomAlert("Removed from Whitelist", "warning")
+  } else {
+    localStorage.setItem("favorite", JSON.stringify(true));
+    showCustomAlert("Added in Whitelist", "success")
+
+  }
+
+  // Update the UI
+  updateFavoriteUI();
+});
+
+// Initialize the UI on page load
+document.addEventListener("DOMContentLoaded", updateFavoriteUI);
+
 
 // On Load
 updateCartUI();

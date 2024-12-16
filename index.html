@@ -17,7 +17,6 @@
       body {
         font-family: "Roboto", sans-serif;
       }
-
       .custom-alert {
         position: fixed;
         top: 20px;
@@ -33,7 +32,6 @@
         pointer-events: none;
         transition: opacity 0.3s ease-in-out;
       }
-
       .custom-alert.show {
         opacity: 1;
         pointer-events: auto;
@@ -41,168 +39,180 @@
     </style>
   </head>
   <body
-    class="flex justify-center items-center min-h-screen bg-gray-100 pt-4 pb-10 lg:pt-0 lg:pb-0"
+    class="flex justify-center items-center min-h-screen w-full bg-white pt-4 pb-10 lg:pt-0 lg:pb-0"
   >
     <div
-      class="container flex flex-col lg:flex-row bg-white shadow-lg rounded-lg overflow-hidden w-11/12 max-w-5xl"
+      class="container flex flex-col lg:flex-row bg-white overflow-hidden w-11/12 lg:w-full max-w-[1320px] lg:max-h-[720px] lg:gap-[60px]"
     >
       <!-- Image Section -->
       <div
-        class="image-section flex-1 bg-purple-200 flex justify-center items-center"
+        class="image-section lg:w-[630px] lg:h-[721px] flex-1 flex rounded-[4px] justify-center items-center"
       >
         <img
           id="main-image"
           src=""
           alt="Smart Watch"
-          class="max-w-full h-auto"
+          class="w-full h-full rounded-[4px]"
         />
       </div>
 
       <!-- Details Section -->
-      <div class="details-section flex-1 p-6 flex flex-col">
-        <h1 class="text-[#364A63] text-[44px] font-bold">
-          Classy Modern Smart Watch
-        </h1>
-        <div class="rating text-[#FFD200] mb-2 text-lg">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fa-regular fa-star-half-stroke"></i>
-          <i class="far fa-star"></i>
-          <span class="text-[#8091A7] text-sm"> (2 Reviews)</span>
-        </div>
-        <div class="price text-[#6576FF] text-2xl font-bold mb-4">
-          <del class="text-[#8091A7] text-xl mr-1 font-normal">$99.00</del>
-          $79.00
-        </div>
-        <p class="text-lg text-[#8091A7] mb-4">
-          I must explain to you how all this mistaken idea of denouncing
-          pleasure and praising pain was born.
-        </p>
+      <div
+        class="details-section flex-1 flex items-center lg:w-[630px] lg:h-[721px]"
+      >
+        <div class="flex flex-col lg:h-fit p-2 space-y-3">
+          <h1 class="text-[#364A63] text-[44px] font-bold">
+            Classy Modern Smart Watch
+          </h1>
+          <div class="rating text-[#FFD200] text-lg">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fa-regular fa-star-half-stroke"></i>
+            <i class="far fa-star"></i>
+            <span class="text-[#8091A7] text-sm"> (2 Reviews)</span>
+          </div>
+          <div class="price text-[#6576FF] text-2xl font-bold mb-4">
+            <del class="text-[#8091A7] text-xl mr-1 font-normal">$99.00</del>
+            $79.00
+          </div>
+          <p class="text-lg text-[#8091A7] mb-4">
+            I must explain to you how all this mistaken idea of denouncing
+            pleasure and praising pain was born.
+          </p>
 
-        <!-- Band Color -->
-        <div class="options mb-4">
-          <label class="block font-medium mb-2 text-[#364A63] text-lg"
-            >Band Color</label
-          >
-          <div id="band-color" class="flex gap-3">
-            <div
-              class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center selected"
-              data-band-image="/assets/purple.png"
-              data-band-color="Purple"
+          <!-- Band Color -->
+          <div class="options mb-4">
+            <label class="block font-medium mb-2 text-[#364A63] text-lg"
+              >Band Color</label
             >
+            <div id="band-color" class="flex gap-3">
               <div
-                class="w-4 h-4 rounded-full bg-purple-500 cursor-pointer"
-              ></div>
-            </div>
+                class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center selected"
+                data-band-image="/assets/purple.png"
+                data-band-color="Purple"
+              >
+                <div
+                  class="w-4 h-4 rounded-full bg-purple-500 cursor-pointer"
+                ></div>
+              </div>
 
-            <div
-              class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center"
-              data-band-image="/assets/cyan.png"
-              data-band-color="Cyan"
-            >
               <div
-                class="w-4 h-4 rounded-full bg-cyan-400 cursor-pointer"
-              ></div>
-            </div>
-            <div
-              class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center"
-              data-band-image="/assets/blue.png"
-              data-band-color="Blue"
-            >
+                class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center"
+                data-band-image="/assets/cyan.png"
+                data-band-color="Cyan"
+              >
+                <div
+                  class="w-4 h-4 rounded-full bg-cyan-400 cursor-pointer"
+                ></div>
+              </div>
               <div
-                class="w-4 h-4 rounded-full bg-blue-500 cursor-pointer"
-              ></div>
-            </div>
-            <div
-              class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center"
-              data-band-image="/assets/black.png"
-              data-band-color="Black"
-            >
-              <div class="w-4 h-4 rounded-full bg-black cursor-pointer"></div>
+                class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center"
+                data-band-image="/assets/blue.png"
+                data-band-color="Blue"
+              >
+                <div
+                  class="w-4 h-4 rounded-full bg-blue-500 cursor-pointer"
+                ></div>
+              </div>
+              <div
+                class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center"
+                data-band-image="/assets/black.png"
+                data-band-color="Black"
+              >
+                <div class="w-4 h-4 rounded-full bg-black cursor-pointer"></div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Wrist Size -->
-        <div class="options mb-4">
-          <label class="block font-medium mb-2 text-[#364A63] text-lg"
-            >Wrist Size</label
-          >
-          <div id="wrist-size" class="flex gap-3">
-            <button
-              data-size="S"
-              data-price="69"
-              class="w-[73px] h-[36px] border border-[#6576FF] text-[#8091A7] rounded-[3px] text-[13px]"
+          <!-- Wrist Size -->
+          <div class="options mb-4">
+            <label class="block font-medium mb-2 text-[#364A63] text-lg"
+              >Wrist Size</label
             >
-              <span class="sizeTitle pr-1 text-[#6576FF] font-bold text-[14px]"
-                >S</span
+            <div id="wrist-size" class="flex gap-3">
+              <button
+                data-size="S"
+                data-price="69"
+                class="w-[73px] h-[36px] border border-[#6576FF] text-[#8091A7] rounded-[3px] text-[13px]"
               >
-              $69
+                <span
+                  class="sizeTitle pr-1 text-[#6576FF] font-bold text-[14px]"
+                  >S</span
+                >
+                $69
+              </button>
+              <button
+                data-size="M"
+                data-price="79"
+                class="w-[73px] h-[36px] border border-[#8091A7] text-[#8091A7] rounded-[3px] text-[13px]"
+              >
+                <span
+                  class="sizeTitle pr-1 text-[#364A63] font-bold text-[14px]"
+                  >M</span
+                >
+                $79
+              </button>
+              <button
+                data-size="L"
+                data-price="89"
+                class="w-[73px] h-[36px] border border-[#8091A7] text-[#8091A7] rounded-[3px] text-[13px]"
+              >
+                <span
+                  class="sizeTitle pr-1 text-[#364A63] font-bold text-[14px]"
+                  >L</span
+                >
+                $89
+              </button>
+              <button
+                data-size="XL"
+                data-price="99"
+                class="w-[73px] h-[36px] border border-[#8091A7] text-[#8091A7] rounded-[3px] text-[13px]"
+              >
+                <span
+                  class="sizeTitle pr-1 text-[#364A63] font-bold text-[14px]"
+                  >XL</span
+                >
+                $99
+              </button>
+            </div>
+          </div>
+
+          <!-- Quantity & Add to Cart -->
+          <div class="cart-actions flex items-center gap-3">
+            <div
+              class="border border-[#DBDFEA] rounded-[4px] w-fit h-[36px] p-0 m-0"
+            >
+              <button
+                id="decrement"
+                class="h-[36px] w-[36px] text-[19px] text-[#8091A7] hover:text-gray-700"
+              >
+                -
+              </button>
+              <input
+                id="quantity"
+                type="text"
+                value="1"
+                class="w-[60px] h-[36x] bg-tranparent text-center border-x border-[#DBDFEA] text-[#8091A7] text-[19px]"
+              />
+              <button
+                id="increment"
+                class="h-[36px] w-[36px] text-[19px] text-[#8091A7] hover:text-gray-700"
+              >
+                +
+              </button>
+            </div>
+            <button
+              id="add-to-cart"
+              class="py-2 h-[37px] px-[18px] font-bold bg-[#6576FF] text-white rounded-[3px] hover:bg-blue-400"
+            >
+              Add to Cart
             </button>
-            <button
-              data-size="M"
-              data-price="79"
-              class="w-[73px] h-[36px] border border-[#8091A7] text-[#8091A7] rounded-[3px] text-[13px]"
-            >
-              <span class="sizeTitle pr-1 text-[#364A63] font-bold text-[14px]"
-                >M</span
-              >
-              $79
-            </button>
-            <button
-              data-size="L"
-              data-price="89"
-              class="w-[73px] h-[36px] border border-[#8091A7] text-[#8091A7] rounded-[3px] text-[13px]"
-            >
-              <span class="sizeTitle pr-1 text-[#364A63] font-bold text-[14px]"
-                >L</span
-              >
-              $89
-            </button>
-            <button
-              data-size="XL"
-              data-price="99"
-              class="w-[73px] h-[36px] border border-[#8091A7] text-[#8091A7] rounded-[3px] text-[13px]"
-            >
-              <span class="sizeTitle pr-1 text-[#364A63] font-bold text-[14px]"
-                >XL</span
-              >
-              $99
+
+            <button id="favorite-btn">
+              <i class="fa-regular fa-heart text-xl text-[#6576FF]"></i>
             </button>
           </div>
-        </div>
-
-        <!-- Quantity & Add to Cart -->
-        <div class="cart-actions flex items-center gap-3">
-          <div
-            class="border border-[#DBDFEA] rounded-[4px] w-fit h-[36px] p-0 m-0"
-          >
-            <button
-              id="decrement"
-              class="h-[36px] w-[36px] text-[19px] text-[#8091A7] hover:text-gray-700"
-            >
-              -
-            </button>
-            <input
-              id="quantity"
-              type="text"
-              value="1"
-              class="w-[60px] h-[36x] bg-tranparent text-center border-x border-[#DBDFEA] text-[#8091A7] text-[19px]"
-            />
-            <button
-              id="increment"
-              class="h-[36px] w-[36px] text-[19px] text-[#8091A7] hover:text-gray-700"
-            >
-              +
-            </button>
-          </div>
-          <button
-            id="add-to-cart"
-            class="py-2 h-[37px] px-[18px] font-bold bg-[#6576FF] text-white rounded-[3px] hover:bg-blue-400"
-          >
-            Add to Cart
-          </button>
         </div>
       </div>
     </div>
