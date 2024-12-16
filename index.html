@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smart Watch</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- import font awesome -->
     <script
       src="https://kit.fontawesome.com/9a1677510c.js"
       crossorigin="anonymous"
@@ -22,7 +20,7 @@
 
       .custom-alert {
         position: fixed;
-        bottom: 20px;
+        top: 20px;
         left: 50%;
         transform: translateX(-50%);
         background: #4caf50;
@@ -42,7 +40,9 @@
       }
     </style>
   </head>
-  <body class="flex justify-center items-center min-h-screen bg-gray-100">
+  <body
+    class="flex justify-center items-center min-h-screen bg-gray-100 pt-4 pb-10 lg:pt-0 lg:pb-0"
+  >
     <div
       class="container flex flex-col lg:flex-row bg-white shadow-lg rounded-lg overflow-hidden w-11/12 max-w-5xl"
     >
@@ -88,8 +88,8 @@
           <div id="band-color" class="flex gap-3">
             <div
               class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center selected"
-              data-image="/assets/purple.png"
-              data-band-color="#6b46c1"
+              data-band-image="/assets/purple.png"
+              data-band-color="Purple"
             >
               <div
                 class="w-4 h-4 rounded-full bg-purple-500 cursor-pointer"
@@ -98,8 +98,8 @@
 
             <div
               class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center"
-              data-image="/assets/cyan.png"
-              data-band-color="#4fd1c5"
+              data-band-image="/assets/cyan.png"
+              data-band-color="Cyan"
             >
               <div
                 class="w-4 h-4 rounded-full bg-cyan-400 cursor-pointer"
@@ -107,8 +107,8 @@
             </div>
             <div
               class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center"
-              data-image="/assets/blue.png"
-              data-band-color="#3142ce"
+              data-band-image="/assets/blue.png"
+              data-band-color="Blue"
             >
               <div
                 class="w-4 h-4 rounded-full bg-blue-500 cursor-pointer"
@@ -116,8 +116,8 @@
             </div>
             <div
               class="w-6 h-6 border-2 border-transparent rounded-full flex items-center justify-center"
-              data-image="/assets/black.png"
-              data-band-color="#000000"
+              data-band-image="/assets/black.png"
+              data-band-color="Black"
             >
               <div class="w-4 h-4 rounded-full bg-black cursor-pointer"></div>
             </div>
@@ -133,9 +133,11 @@
             <button
               data-size="S"
               data-price="69"
-              class="w-[73px] h-[36px] border border-[#8091A7] text-[#8091A7] rounded-[3px] text-[13px]"
+              class="w-[73px] h-[36px] border border-[#6576FF] text-[#8091A7] rounded-[3px] text-[13px]"
             >
-              <span class="pr-1 text-[#6576FF] font-bold text-[14px]">S</span>
+              <span class="sizeTitle pr-1 text-[#6576FF] font-bold text-[14px]"
+                >S</span
+              >
               $69
             </button>
             <button
@@ -143,7 +145,9 @@
               data-price="79"
               class="w-[73px] h-[36px] border border-[#8091A7] text-[#8091A7] rounded-[3px] text-[13px]"
             >
-              <span class="pr-1 text-[#364A63] font-bold text-[14px]">M</span>
+              <span class="sizeTitle pr-1 text-[#364A63] font-bold text-[14px]"
+                >M</span
+              >
               $79
             </button>
             <button
@@ -151,7 +155,9 @@
               data-price="89"
               class="w-[73px] h-[36px] border border-[#8091A7] text-[#8091A7] rounded-[3px] text-[13px]"
             >
-              <span class="pr-1 text-[#364A63] font-bold text-[14px]">L</span>
+              <span class="sizeTitle pr-1 text-[#364A63] font-bold text-[14px]"
+                >L</span
+              >
               $89
             </button>
             <button
@@ -159,7 +165,9 @@
               data-price="99"
               class="w-[73px] h-[36px] border border-[#8091A7] text-[#8091A7] rounded-[3px] text-[13px]"
             >
-              <span class="pr-1 text-[#364A63] font-bold text-[14px]">XL</span>
+              <span class="sizeTitle pr-1 text-[#364A63] font-bold text-[14px]"
+                >XL</span
+              >
               $99
             </button>
           </div>
@@ -202,32 +210,64 @@
     <!-- Floating Cart Button -->
     <button
       id="checkout-btn"
-      class="fixed bottom-4 right-4 bg-orange-500 text-white rounded-full py-3 px-6 shadow-lg hidden"
+      class="fixed bottom-4 bg-[#FFBB5A] text-[#364A63] text-[14px] font-bold rounded-[20px] w-fit py-1 px-6 shadow-lg hidden"
     >
-      Checkout (<span id="cart-count">0</span>)
+      Checkout
+      <span
+        id="cart-count"
+        class="py-[2px] px-[6px] ml-1 bg-white text-[12px] rounded-[5px]"
+        >0</span
+      >
     </button>
 
     <!-- Modal for Cart Preview -->
     <div
       id="cart-modal"
-      class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center hidden"
+      class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center p-4 hidden"
     >
-      <div class="bg-white rounded-lg w-11/12 max-w-md p-4 relative">
-        <h2 class="text-xl font-bold mb-4">Your Cart</h2>
-        <div id="cart-items" class="space-y-2">
-          <!-- Items will be dynamically added here -->
+      <div
+        class="bg-white rounded-[20px] w-full max-w-[651px] p-4 md:p-11 relative"
+      >
+        <h2 class="text-[22px] text-[#364A63] font-bold mb-4">Your Cart</h2>
+        <div class="w-full overflow-x-auto">
+          <table
+            class="w-full text-left text-[11px] md:text-[14px] border-collapse"
+          >
+            <thead>
+              <tr class="border-b text-[#8091A7] font-normal">
+                <th class="py-4 md:pr-6 font-normal">Item</th>
+                <th class="py-4 md:px-6 font-normal">Color</th>
+                <th class="py-4 md:px-6 font-normal">Size</th>
+                <th class="py-4 md:px-6 font-normal">Qnt</th>
+                <th class="py-4 md:px-6 font-normal">Price</th>
+                <th class="py-4 font-normal"></th>
+              </tr>
+            </thead>
+            <tbody id="cart-items">
+              <!-- Table item -->
+            </tbody>
+          </table>
         </div>
-        <div class="text-right font-bold text-lg mt-4">
-          Total: $<span id="cart-total">0</span>
+
+        <div
+          class="text-right font-bold text-xs md:text-lg mt-4 flex justify-between items-center"
+        >
+          <p class="text-base text-[#373737]">Total</p>
+          <div class="text-[#364A63] flex gap-[20px]">
+            <p id="cart-quantity"></p>
+            <p class="md:mr-11 text-right">$<span id="cart-total"></span></p>
+          </div>
         </div>
-        <div class="flex justify-between mt-4">
+        <div class="flex justify-end gap-6 mt-4">
           <button
             id="continue-shopping"
-            class="py-2 px-4 bg-gray-300 rounded-lg"
+            class="py-2 px-[18px] text-[#364A63] border border-[#DBDFEA] text-[13px] font-bold rounded-[3px]"
           >
             Continue Shopping
           </button>
-          <button class="py-2 px-4 bg-blue-500 text-white rounded-lg">
+          <button
+            class="py-2 px-[18px] bg-[#6576FF] text-white rounded-[3px] text-[13px] font-bold"
+          >
             Checkout
           </button>
         </div>
@@ -237,5 +277,6 @@
     <!-- Custom Alert -->
     <div id="custom-alert" class="custom-alert">Item added to cart!</div>
   </body>
+
   <script src="/smartWatch.js"></script>
 </html>

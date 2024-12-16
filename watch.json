@@ -1,0 +1,51 @@
+
+{"name": "Classy Modern Smart Watch",
+"description": "I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born.",
+"price": {
+  "original": 99.00,
+  "discounted": 79.00
+},
+"reviews": {
+  "rating": 3.5,
+  "reviewCount": 2
+},
+"bandColors": [
+  {
+    "colorName": "Purple",
+    "colorCode": "#6b46c1",
+    "image": "/assets/purple.png"
+  },
+  {
+    "colorName": "Cyan",
+    "colorCode": "#4fd1c5",
+    "image": "/assets/cyan.png"
+  },
+  {
+    "colorName": "Blue",
+    "colorCode": "#3142ce",
+    "image": "/assets/blue.png"
+  },
+  {
+    "colorName": "Black",
+    "colorCode": "#000000",
+    "image": "/assets/black.png"
+  }
+],
+"wristSizes": [
+  {
+    "size": "S",
+    "price": 69.00
+  },
+  {
+    "size": "M",
+    "price": 79.00
+  },
+  {
+    "size": "L",
+    "price": 89.00
+  },
+  {
+    "size": "XL",
+    "price": 99.00
+  }
+]}
